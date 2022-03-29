@@ -1,18 +1,18 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3854910.svg)](https://doi.org/10.5281/zenodo.3854910)
-
-# An Empirical Investigation on (Surrogate) Modeling Techniques for Robust Optimization 
-Contains the code for empirically investigating the practicality of (surrogate) modeling techniques for finding robust solutions.
+# On the Issue of Computational Cost of Robustness
+Contains the code for empirically evaluating and comparing five of the most common robustness formulation in Kriging-based Robust Optimization (KB-RO).
 Robust solutions are solutions that are immune to the uncertainty/noise in the decision/search variables.
-For finding robust solutions, the conceptual framework of one-shot optimization is utilized (as opposed to sequential model-based optimization).
+For finding robust solutions, the conceptual framework of sequential model-based optimization is utilized.
 
 # Introduction
-This code is based on our paper, titled [An Empirical Comparison of Meta-Modeling Techniques for Robust Design Optimization](https://ieeexplore.ieee.org/abstract/document/9002805) (Ullah, Wang, Menzel, Sendhoff & Bäck, 2019), and can be used to reproduce
-the experimental setup and results mentioned in the paper. The code is produced in Python 3.0. The main packages utilized in this code are presented in the next section which deals with technical requirements. 
+This code is based on our submitted paper (to PPSN 2022), titled `On the Issue of Computational Cost of Robustness in Model-Assisted Robust Optimization, and can be used to reproduce
+the experimental setup and results mentioned in the paper. The code is produced in Python 3.7.0. The main packages utilized in this code are presented in the next section which deals with technical requirements. 
 
-The code is present in the main directory as well as other sub-directories. Within the main directory, the file `RBFN.py` contains the code to implement
-Radial Basis Function Network (RBFN), which is one of the most popular surrogate modeling techniques. This file is to be included/imported wherever the implementation of
-RBFN model is required. Similar to `RBFN.py`, we also have `Utils.py` script within the main directory which contains the basic utility functions.
-Like `RBFN.py`, this file must also be imported wherever the utility of the methods inside it is needed.
+The code is present in the main directory as well as three other sub-directories. Within the main directory, the file `doe.py` contains the code to implement
+the test functions and design of experiment (DoE) discussed in the paper.
+The main directory also contains two csv files which contain the meta-data about the test scenarios.
+Out of these two files, `Settings.csv` contains the meta-data about the test cases which have two or five dimensions.
+The other file, namely the `Settings__10.csv` contains the meta-data about the test cases which have ten dimensions.
+
 
 There are three main directories within the main folder, which are titled `Accuracy`, `Hyper_Parameter_Optimization`, and `Results Compilation` respectively.
 The first of these, namely `Accuracy` contains three further sub-directories, which are titled `NoiseLevel1`, `NoiseLevel2`, and `NoiseLevel3` respectively.
