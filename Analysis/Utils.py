@@ -303,5 +303,5 @@ def __extract__time__information (target, res, data, dim):
 
 
 
-settings = pd.read_csv ('C:\\Users\\sefi\\Cost of Robustness\\Results\\Graphs\\Graphs - Latest\\Settings.csv', index_col = 0)
-settings_10 = pd.read_csv ('C:\\Users\\sefi\\Cost of Robustness\\Results\\Graphs\\Graphs - Latest\\Settings.csv', index_col = 0)
+settings = pd.read_csv ('Settings.csv', index_col = 0)
+settings_10 = pd.read_csv ('Settings__10.csv', index_col = 0)
