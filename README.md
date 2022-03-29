@@ -14,17 +14,23 @@ Out of these two files, `Settings.csv` contains the meta-data about the test cas
 The other file, namely the `Settings__10.csv` contains the meta-data about the test cases which have ten dimensions.
 
 
-There are three main directories within the main folder, which are titled `Accuracy`, `Hyper_Parameter_Optimization`, and `Results Compilation` respectively.
-The first of these, namely `Accuracy` contains three further sub-directories, which are titled `NoiseLevel1`, `NoiseLevel2`, and `NoiseLevel3` respectively.
-As the name suggests, these directories contain the code for a particular choice of noise level (the scale of uncertainty).
-Within each of these directories, we further come up against six sub-directories which represent the test problem at hand.
-If we further explore, these directories contain two jupyter notebooks, namely `Generate_Data_Sets.ipynb` and `Final_Comparison.ipynb`.
-While the former contains the methods and routines for generating the training and testing data sets, the latter deals with constructing and 
-appraising the surrogate models. Outside, the folder `Hyper_Parameter_Optimization` contains six sub-folders which represent the choice of modeling techniques.
-Each of these sub-folders further contains a jupyter notebook, titled `*_Hyper.ipynb`, where `*` serves as the choice of modeling technique, e.g., Kriging, Random Forest.
-This jupyter notebook contains the code for hyper parameter optimization for the chosen modeling technique.
-Lastly, the folder `Results Compilation` contains several sub-folders which are named after the test problem considered (apart from folder `Graphs` which simply contains
-all the plots). Each of those sub-folders contain the file `Graph.ipynb` which produces the figures and plots for the results achieved.
+There are three main directories within the main folder, which are titled `Analysis`, `Compute Ground Truth`, and `KB-RO` respectively.
+The first of these, namely `Analysis` contains six code files, namely `Avg. CPU Time Per Iteration.ipynb`, `ECDF.ipynb`, 
+`Fixed__Iterations__Analysis.ipynb`, `Fixed__Target__Analysis.ipynb`, `Fixed__Time__Analysis.ipynb`, and `Utils.py` respectively.
+The file `Utils.py` contains the methods necessary to run the `.ipynb` files, whereas all the other files except  `ECDF.ipynb`
+utilize these methods to perform the corresponding analysis.
+The `ECDF.ipynb` file generates the empirical cumulative distribution functions (ecdfs) plots utilized in the paper.
+
+The directory `Compute Ground Truth` contains the code to compute the ground truth for each test scenario.
+This directory has two files, namely `ground_truth.py` and `Parallel_Ground_Truth_MPI_Pieces.py`. The former is a helper file that
+contains methods to compute the ground truth, whereas the latter actually runs the code based on parallel execution.
+
+The directory `KB-RO` contains the actual implementation of Kriging-based Robust Optimization (Algorithm 1) discussed in the paper. 
+This directory contains four python files, namely `lib.py`, `new_sample.py`, `robust_lib.py`, and `smbo.py` respectively.
+The files `lib.py` and `robust_lib.py` contains the methods to find the robust optimum, whereas the file `new_sample.py`
+contains the methods to find a new sample point based on augmented expected improvement criterion. 
+Lastly, `smbo.py` runs the actual code in a parallel fashion. 
+
 In the following, we describe the technical requirements as well the instructions to run the code in a sequential manner.
 
 # Requirements
@@ -39,8 +45,10 @@ All four required packages can be installed by executing `pip install -r require
 
 | Package | Description |
 | --- | --- |
-| pyDOE | For sampling plans and Design of Experiment (DoE).  |
-| SciPy | For optimization based on Sequential Quadratic Programming. |
+| mpi4py | For parallel execution of the code on DAS-5 server. |
+| pickle | For saving and retreiving the results from our experimental setup.  |
+| smt | For sampling plans and Design of Experiment (DoE).  |
+| SciPy | For numerical optimization based on L-BFGS-B algorithm. |
 | pandas | For data manipulation and transformation. |
 | scikit-learn | For constructing the Kriging surrogate, as well as data manipulation. |
 
