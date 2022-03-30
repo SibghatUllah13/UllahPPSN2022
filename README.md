@@ -41,7 +41,7 @@ We employ the so-called `Latin Hypercube Sampling` based on the `smt` package.
 For the purpose of numerical optimization in the code, e.g., to maximize the acquisition function, we utilize the famous `L-BFGS-B` algorithm based on `SciPy` package.
 The package `mpi4py` is utilized for parallel execution of the code.
 Finally, the main purpose of the `scikit-learn` package is to construct the Kriging surrogate, as well as data manipulation/wrangling in general. 
-All six required packages can be installed by executing `pip install -r requirements.txt` from the main directory via the command line.
+
 
 | Package | Description |
 | --- | --- |
