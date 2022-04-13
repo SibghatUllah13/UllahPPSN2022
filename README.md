@@ -1,4 +1,4 @@
-# On the Issue of Computational Cost of Robustness
+# A Systematic Approach to Analyze the Computational Cost of Robustness in Model-Assisted Robust Optimization
 Contains the code for empirically evaluating and comparing five of the most common robustness formulations in Kriging-based Robust Optimization (KB-RO).
 Robust solutions are solutions that are immune to the uncertainty/noise in the decision/search variables.
 For finding robust solutions, the conceptual framework of sequential model-based optimization is utilized.
