@@ -1,25 +1,25 @@
 # On the Issue of Computational Cost of Robustness
-Contains the code for empirically evaluating and comparing five of the most common robustness formulation in Kriging-based Robust Optimization (KB-RO).
+Contains the code for empirically evaluating and comparing five of the most common robustness formulations in Kriging-based Robust Optimization (KB-RO).
 Robust solutions are solutions that are immune to the uncertainty/noise in the decision/search variables.
 For finding robust solutions, the conceptual framework of sequential model-based optimization is utilized.
 
 # Introduction
-This code is based on our submitted paper (to PPSN 2022), titled `On the Issue of Computational Cost of Robustness in Model-Assisted Robust Optimization, and can be used to reproduce
-the experimental setup and results mentioned in the paper. The code is produced in Python 3.7.0. The main packages utilized in this code are presented in the next section which deals with technical requirements. 
+This code is based on our submitted paper (to PPSN 2022), titled `A Systematic Approach to Analyze the Computational Cost of Robustness in Model-Assisted Robust Optimization`, and can be used to reproduce
+the experimental setup and results mentioned in the paper. The code is produced in Python 3.7.0. The main packages utilized in this code are presented in the next section, which deals with technical requirements. 
 
 The code is present in the main directory as well as three other sub-directories. Within the main directory, the file `doe.py` contains the code to implement
 the test functions and design of experiment (DoE) discussed in the paper.
 The main directory also contains two csv files which contain the meta-data about the test scenarios.
 Out of these two files, `Settings.csv` contains the meta-data about the test cases which have two or five dimensions.
-The other file, namely the `Settings__10.csv` contains the meta-data about the test cases which have ten dimensions.
+The other file, namely `Settings__10.csv` contains the meta-data about the test cases which have ten dimensions.
 
 
 There are three main directories within the main folder, which are titled `Analysis`, `Compute Ground Truth`, and `KB-RO` respectively.
-The first of these, namely `Analysis` contains six code files, namely `Avg. CPU Time Per Iteration.ipynb`, `ECDF.ipynb`, 
-`Fixed__Iterations__Analysis.ipynb`, `Fixed__Target__Analysis.ipynb`, `Fixed__Time__Analysis.ipynb`, and `Utils.py` respectively.
-The file `Utils.py` contains the methods necessary to run the `.ipynb` files, whereas all the other files except  `ECDF.ipynb`
+The first of these, namely `Analysis` contains eight code files, namely `Avg. CPU Time Per Iteration.ipynb`, `ECDF.ipynb`, `Box__Plots.ipynb`, 
+`T__Max.ipynb`, `Fixed__Iterations__Analysis.ipynb`, `Fixed__Target__Analysis.ipynb`, `Fixed__Time__Analysis.ipynb`, and `Utils.py`.
+The file `Utils.py` contains the methods necessary to run the `.ipynb` files, whereas all the other files except `ECDF.ipynb` and `Box__Plots.ipynb`
 utilize these methods to perform the corresponding analysis.
-The `ECDF.ipynb` file generates the empirical cumulative distribution functions (ecdfs) plots utilized in the paper.
+The `ECDF.ipynb` and `Box__Plots.ipynb` files generate the empirical cumulative distribution functions (ecdfs) and box plots utilized in the paper.
 
 The directory `Compute Ground Truth` contains the code to compute the ground truth for each test scenario.
 This directory has two files, namely `ground_truth.py` and `Parallel_Ground_Truth_MPI_Pieces.py`. The former is a helper file that
@@ -56,7 +56,7 @@ In the following, we describe how to reproduce the experimental setup and result
 
 ## 1. Computing the Ground Truth
 The first task in the experimental setup deals with the computation of ground truth/baseline, with which the quality of the robust optimal
-solutions will be compared. The code for this task is given in the folder `Analysis`, which contains two files, namely 
+solutions will be compared. The code for this task is given in the folder `Compute Ground Truth`, which contains two files, namely 
 `ground_truth.py` and `Parallel_Ground_Truth_MPI_Pieces.py`. The former is a helper file that
 contains methods to compute the ground truth, whereas the latter actually runs the code based on parallel execution.
 
@@ -69,7 +69,7 @@ of robustness formulation and dimensionality.
 ## 3. Fixed budget and Fixed Target Analysis
 The folder `Analysis` contains the jupyter notebooks for running the analysis based on the results from KB-RO and ground truth.
 Here, each notebook implements a specific analysis, e.g., fixed cpu time analysis.
-The notebook `ECDF.ipynb` generates the plots of ecdfs based on the analyses carried out.
+The notebooks `ECDF.ipynb` and `Box__Plots.ipynb` generate the ecdfs and box plots based on the analyses carried out.
 
 # Acknowledgements
 This research has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement number 766186 (ECOLE).
