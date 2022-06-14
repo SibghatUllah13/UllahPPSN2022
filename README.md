@@ -4,7 +4,7 @@ Robust solutions are solutions that are immune to the uncertainty/noise in the d
 For finding robust solutions, the conceptual framework of sequential model-based optimization is utilized.
 
 # Introduction
-This code is based on our submitted paper (to PPSN 2022), titled `A Systematic Approach to Analyze the Computational Cost of Robustness in Model-Assisted Robust Optimization`, and can be used to reproduce
+This code is based on our accepted paper (to PPSN 2022), titled `A Systematic Approach to Analyze the Computational Cost of Robustness in Model-Assisted Robust Optimization`, and can be used to reproduce
 the experimental setup and results mentioned in the paper. The code is produced in Python 3.7.0. The main packages utilized in this code are presented in the next section, which deals with technical requirements. 
 
 The code is present in the main directory as well as three other sub-directories. Within the main directory, the file `doe.py` contains the code to implement
