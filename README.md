@@ -71,5 +71,18 @@ The folder `Analysis` contains the jupyter notebooks for running the analysis ba
 Here, each notebook implements a specific analysis, e.g., fixed cpu time analysis.
 The notebooks `ECDF.ipynb` and `Box__Plots.ipynb` generate the ecdfs and box plots based on the analyses carried out.
 
+# Citation
+## Paper Reference
+S. Ullah, H. Wang, S. Menzel, B. Sendhoff and T. Bäck, "A Systematic Approach to Analyze the Computational Cost of Robustness in Model-Assisted Robust Optimization," in 2022 International Conference on Parallel Problem Solving from Nature (Springer), 2022, pp. 63-75.
+## BibTex Reference
+`@inproceedings{ullah2022systematic`,\
+  `title={A Systematic Approach to Analyze the Computational Cost of Robustness in Model-Assisted Robust Optimization},`\
+  `author={Ullah, Sibghat and Wang, Hao and Menzel, Stefan and Sendhoff, Bernhard and B{\"a}ck, Thomas},`\
+  ` booktitle={International Conference on Parallel Problem Solving from Nature},`\
+  `pages={63--75},`\
+  `year={2022},`\
+  `organization={Springer}`\
+`}`
+
 # Acknowledgements
 This research has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement number 766186 (ECOLE).
